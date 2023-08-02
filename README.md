@@ -1,5 +1,18 @@
 # vue3 + pinia + unocss + uviewplus
 
+## 统一使用pnpm来install
+nrm 添加https://packages.aliyun.com/5facfb4a2f8cc15c287b481b/npm/npm-registry/
+```
+ npm ---------- https://registry.npmjs.org/
+  yarn --------- https://registry.yarnpkg.com/
+  tencent ------ https://mirrors.cloud.tencent.com/npm/
+  cnpm --------- https://r.cnpmjs.org/
+  taobao ------- https://registry.npmmirror.com/
+  npmMirror ---- https://skimdb.npmjs.com/registry/
+* shuinfo ------ https://packages.aliyun.com/5facfb4a2f8cc15c287b481b/npm/npm-registry/
+```
+
+
 ## pinia
 pinia配置persist,会使用持久化保存（uniStorage）
 ```ts
