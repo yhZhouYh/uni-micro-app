@@ -3,19 +3,25 @@ import { extractorAttributify, transformerClass } from 'unocss-preset-weapp/tran
 import presetIcons from '@unocss/preset-icons'
 import transformerVariantGroup from '@unocss/transformer-variant-group'
 
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
+
 const { presetWeappAttributify, transformerAttributify } = extractorAttributify()
 
 export default {
   presets: [
     presetWeapp(),
     presetWeappAttributify(),
-    presetIcons(),
+    presetIcons({
+      collections: {
+        shu: FileSystemIconLoader('./src/icons'),
+      },
+    }),
   ],
   shortcuts: [
     {
       'border-base': 'border border-gray-500_10',
       'center': 'flex justify-center items-center',
-      'wh-full': 'wh-full',
+      'wh-full': 'w-full h-full',
     },
   ],
 

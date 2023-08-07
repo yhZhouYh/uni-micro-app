@@ -30,22 +30,24 @@ async function requestGetCardThemeList(page = 1, size = 10) {
     :auto-back="true"
   />
 
-  <view class="wh-full mt-100rpx text-xl active:(bg-gray-400 font-medium)">
+  <view class="mt-100rpx text-xl wh-full active:(bg-gray-400 font-medium)">
     <text class="title u-fixed m-10" />
   </view>
   <u-button type="primary" @click="changeColor">
     点我变颜色
   </u-button>
   <view i-mdi-alarm text-sm class="u-fixed" />
+  <view class="i-shu:drop" />
   <text class="u-fixed">
     {{ bgColor }}
   </text>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .u-fixed{
   color: v-bind(bgColor);
 }
+
 .logo {
   height: 200rpx;
   width: 200rpx;
