@@ -15,6 +15,7 @@ export default {
     {
       'border-base': 'border border-gray-500_10',
       'center': 'flex justify-center items-center',
+      'wh-full': 'wh-full',
     },
   ],
 

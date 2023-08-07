@@ -30,7 +30,7 @@ async function requestGetCardThemeList(page = 1, size = 10) {
     :auto-back="true"
   />
 
-  <view class="text-area mt-100rpx text-xl active:(bg-gray-400 font-medium)">
+  <view class="wh-full mt-100rpx text-xl active:(bg-gray-400 font-medium)">
     <text class="title u-fixed m-10" />
   </view>
   <u-button type="primary" @click="changeColor">
@@ -53,11 +53,6 @@ async function requestGetCardThemeList(page = 1, size = 10) {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 50rpx
-}
-
-.text-area {
-  display: flex;
-  justify-content: center;
 }
 
 .title {
