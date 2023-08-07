@@ -2,7 +2,6 @@
 import { getCardThemeList } from '~/api'
 
 onLoad(() => {
-  console.log(uni)
   requestGetCardThemeList()
 })
 const colors = ['#5261b1', '#52b170', '#97b152', '#42d392', '#ff9966']
