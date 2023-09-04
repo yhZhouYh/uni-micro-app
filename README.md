@@ -87,8 +87,6 @@ vue相关方法和decloud相关方法都自动按需引入了，不需要import,
 │    ├─ request           —— request文件含有拦截器
 └─ .editorconfig                    —— 编辑器代码风格统一配置
 └─ .gitignore                       —— git提交过滤文件配置
-└─ .prettierignore                  —— prettier文件忽略
-└─ .prettierrc                      —— prettierrc代码格式配置
 └─ index.html                       —— html入口
 └─ commitlint.config.js             —— 代码提交风格配置
 └─ main.js                          —— js文件入口
@@ -101,17 +99,7 @@ vue相关方法和decloud相关方法都自动按需引入了，不需要import,
 └─ uni.scss                         —— 全局样式
 └─ App.vue                          —— vue入口文件
 ```
-## 代码提交规范(commitlint + husky)
-npx husky-init
-npm install @commitlint/cli @commitlint/config-conventional -D
-# 在根目录创建commitlint.config.js配置文件
 
-module.exports = {
-  extends: ['@commitlint/config-conventional'],
-};
-# 将commitlint加到husky的钩子中
-
-npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
 # 提交规范
 ```JSON
 feat：新增功能
@@ -131,10 +119,7 @@ revert：回滚某个更早之前的提交
 git commit -m 'fix: 修复xxx页面跳转异常'
 
 # 插件
-```js
-"@commitlint/cli": "^17.6.7";
-"@commitlint/config-conventional": "^17.6.7";
+```JSON
+
 "uni-mini-router": "^0.1.4";//使用此插件，路由跳转可以使用vue的方法，官网为https://ask.dcloud.net.cn/article/40552
-"prettier": "^3.0.1";
-"sass": "^1.66.1";
-"sass-loader": "^10.4.1"
+```

@@ -2,8 +2,8 @@
  * @Author: zhangxiangxiang
  * @Description: 登录方法
  * @Date: 2023-08-09 23:17:23
- * @LastEditors: zhangxiangxiang
- * @LastEditTime: 2023-09-01 16:59:17
+ * @LastEditors: zxx
+ * @LastEditTime: 2023-09-04 21:06:43
  * @FilePath: /template-uni-vue3/src/utils/login/index.ts
  */
 import { useLoginStore, useUserStore } from '~/store'
@@ -16,7 +16,7 @@ import pinia from '~/store/setup'
 
 const { info } = useLoginStore(pinia())
 const { members } = useUserStore(pinia())
-const launchOpts = uni.getLaunchOptionsSync()
+// const launchOpts = uni.getLaunchOptionsSync()
 
 /**
  * @description  从小程序码进入需要getSceneParams(e.scene)转
@@ -48,8 +48,8 @@ export function appLogin() {
           resolve(res)
         })
       },
-      fail(res) {
-        reject()
+      fail(error) {
+        reject(error)
       },
     })
   })
@@ -73,63 +73,65 @@ export function setUserInfo(res_info) {
  * @param
  * @returns
  */
-export async function getPhoneNumber(e) {
-  return new Promise(async (resolve, reject) => {
-    const login_info = await appLogin()
+export function getPhoneNumber(e) {
+  return new Promise((resolve, reject) => {
+    (async () => {
+      const login_info = await appLogin()
 
-    try {
-      setUserInfo(login_info)
+      try {
+        setUserInfo(login_info)
 
-      if (e?.detail?.code || e?.detail?.encryptedData || e?.detail?.encryptData) {
-        let account_id = 0
-        try {
-          account_id = await Storage.getStorage('accountId')
-        }
-        catch (e) {
-
-        }
-
-        try {
-          if (!login_info.ticket) {
-            await getUserInfo()
-            await getMerbersInfo()
-            resolve('success')
+        if (e?.detail?.code || e?.detail?.encryptedData || e?.detail?.encryptData) {
+          // const account_id = 0
+          try {
+            // account_id = await Storage.getStorage('accountId')
           }
-          else {
-            await updateMobile({
-              account_id: 0,
-              encrypt_data: e?.detail?.encryptedData || e?.detail?.encryptData,
-              iv: e?.detail?.iv,
-              app_id: info.APP_ID,
-              ticket: info?.ticket || '',
-              openId: info.open_id,
-            }).then(async (res) => {
-              info.auth_token = res.auth_token // 特殊处理刚注册用这个token
+          catch (e) {
+
+          }
+
+          try {
+            if (!login_info.ticket) {
               await getUserInfo()
               await getMerbersInfo()
               resolve('success')
-            })
+            }
+            else {
+              await updateMobile({
+                account_id: 0,
+                encrypt_data: e?.detail?.encryptedData || e?.detail?.encryptData,
+                iv: e?.detail?.iv,
+                app_id: info.APP_ID,
+                ticket: info?.ticket || '',
+                openId: info.open_id,
+              }).then(async (res) => {
+                info.auth_token = res.auth_token // 特殊处理刚注册用这个token
+                await getUserInfo()
+                await getMerbersInfo()
+                resolve('success')
+              })
+            }
           }
-        }
-        catch (e) {
-          reject(e)
-        }
+          catch (e) {
+            reject(e)
+          }
 
-        // 注册后调用
-        // const sceneParams = getSceneParams(launchOpts.query.scene)
+          // 注册后调用,视情况而定
+          // const sceneParams = getSceneParams(launchOpts.query.scene)
+        }
+        else {
+          uni.showToast({
+            title: '手机号获取失败，请尝试更新微信版本后重试',
+            icon: 'none',
+            duration: 2500,
+          })
+          return Promise.reject(error)
+        }
       }
-      else {
-        uni.showToast({
-          title: '手机号获取失败，请尝试更新微信版本后重试',
-          icon: 'none',
-          duration: 2500,
-        })
-        return Promise.reject()
+      catch (error) {
+        reject(error)
       }
-    }
-    catch (error) {
-      reject(error)
-    }
+    })()
   })
 }
 

@@ -18,7 +18,10 @@ function getChange() {
     我是头部
     {{ a }}
     {{ name }}
-    <u-image src="https://cdn.uviewui.com/uview/album/1.jpg" mode="widthFix" />
+    <u-image
+      src="https://cdn.uviewui.com/uview/album/1.jpg"
+      mode="widthFix"
+    />
     <u-button type="primary">
       test
     </u-button>

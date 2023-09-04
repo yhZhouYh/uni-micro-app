@@ -1,3 +1,11 @@
+/*
+ * @Author: zxx
+ * @Description: 
+ * @Date: 2023-08-31 14:14:48
+ * @LastEditors: zxx
+ * @LastEditTime: 2023-09-04 21:16:34
+ * @FilePath: /template-uni-vue3/src/env.d.ts
+ */
 /// <reference types="vite/client" />
 
 declare module '*.vue' {
@@ -20,3 +28,4 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv
 }
+

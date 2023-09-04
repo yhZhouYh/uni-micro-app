@@ -3,7 +3,7 @@
  * @Description:跳转其他页面的方法，包括跳转tabtar页面
  * @Date: 2023-09-04 09:51:20
  * @LastEditors: zxx
- * @LastEditTime: 2023-09-04 11:40:46
+ * @LastEditTime: 2023-09-04 17:54:54
  * @FilePath: /template-uni-vue3/src/utils/common/goskip.js
  */
 import router from '@/router'
@@ -30,8 +30,5 @@ export default function goskip(url) {
         path: url,
       })
     }
-  }
-  else {
-
   }
 }

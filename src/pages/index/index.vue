@@ -3,7 +3,7 @@
  * @Description:
  * @Date: 2023-08-31 14:14:48
  * @LastEditors: zxx
- * @LastEditTime: 2023-09-04 09:41:06
+ * @LastEditTime: 2023-09-04 17:50:32
  * @FilePath: /template-uni-vue3/src/pages/index/index.vue
 -->
 <script setup>
@@ -40,6 +40,13 @@ async function requestGetCardThemeList(page = 1, size = 10) {
   <view>
     <shu-nav-bar :title="state.title" />
     <shu-login-modal />
+    sssss
+    <button @click="changeColor()">
+      按钮
+    </button>
+    {{ bgColor }}
+
+    {{ bool }}
     <shu-tab-bar :value="state.value" />
   </view>
 </template>
