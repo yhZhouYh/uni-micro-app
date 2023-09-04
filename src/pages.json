@@ -2,12 +2,38 @@
   "pages": [
     {
       "path": "pages/index/index",
+      "name": "shouye",
       "style": {
-        "navigationBarTitleText": "uni-app",
+        "navigationBarTitleText": "首页",
+        "navigationStyle": "custom"
+      }
+    },
+    {
+      "path": "pages/kitchen/index",
+      "name": "kitchen",
+      "style": {
+        "navigationBarTitleText": "灵感中心",
         "navigationStyle": "custom"
       }
     }
   ],
+  "tabBar": {
+    "custom": true,
+    "color": "#2c2c2c",
+    "selectedColor": "#ff8936",
+    "backgroundColor": "#fff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/kitchen/index",
+        "text": "灵感厨房"
+      }
+    ]
+  },
   "easycom": {
     "custom": {
       "^u-(.*)": "uview-plus/components/u-$1/u-$1.vue",

@@ -1,6 +1,18 @@
-<script setup lang="ts">
+<!--
+ * @Author: zhangxiangxiang
+ * @Description:
+ * @Date: 2023-08-31 14:14:48
+ * @LastEditors: zxx
+ * @LastEditTime: 2023-09-04 09:41:06
+ * @FilePath: /template-uni-vue3/src/pages/index/index.vue
+-->
+<script setup>
 import { getCardThemeList } from '~/api'
 
+const state = reactive({
+  title: '首页',
+  value: 0,
+})
 onLoad(() => {
   requestGetCardThemeList()
 })
@@ -25,22 +37,11 @@ async function requestGetCardThemeList(page = 1, size = 10) {
 </script>
 
 <template>
-  <u-navbar
-    title="个人中心"
-    :auto-back="true"
-  />
-
-  <view class="mt-100rpx text-xl wh-full active:(bg-gray-400 font-medium)">
-    <text class="title u-fixed m-10" />
+  <view>
+    <shu-nav-bar :title="state.title" />
+    <shu-login-modal />
+    <shu-tab-bar :value="state.value" />
   </view>
-  <u-button type="primary" @click="changeColor">
-    点我变颜色
-  </u-button>
-  <view i-mdi-alarm text-sm class="u-fixed" />
-  <view class="i-shu:drop" />
-  <text class="u-fixed">
-    {{ bgColor }}
-  </text>
 </template>
 
 <style scoped lang="scss">

@@ -1,0 +1,6 @@
+/dist/*
+*.css
+*.scss
+src/components/common/little-helper/index.vue
+mini-ci-config.json
+*.md
