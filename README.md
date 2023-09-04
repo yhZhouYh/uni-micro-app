@@ -56,7 +56,7 @@ vue相关方法和decloud相关方法都自动按需引入了，不需要import,
 ## 公共项目框架
 基于uniapp创建，使用vue3开发
 ## 项目目录
-```js
+```JSON
 ├─ api                              —— 接口配置中心
 ├─ components
 │    ├─ swiper                      —— 轮播图公共组件
@@ -113,7 +113,7 @@ module.exports = {
 
 npx husky add .husky/commit-msg 'npx --no-install commitlint --edit "$1"'
 # 提交规范
-```js
+```JSON
 feat：新增功能
 fix：bug 修复
 docs：文档更新
