@@ -30,17 +30,16 @@
         font-size: 32rpx;
         font-weight: 500;
       }
-      .close-style{
+      .close-style {
         width: 40rpx;
         height: 40rpx;
 
         margin-left: 240rpx;
         .mask-close {
-        width: 20rpx;
-        height: 20rpx;
+          width: 20rpx;
+          height: 20rpx;
+        }
       }
-      }
-
     }
     .mask-text {
       width: 676rpx;
@@ -52,7 +51,6 @@
       margin-bottom: 48rpx;
     }
     .mask-private {
-
       margin-left: 32rpx;
       display: flex;
       align-items: center;

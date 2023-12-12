@@ -16,7 +16,9 @@ function store() {
     addLoadingCounter,
     subLoadingCounter,
     resetLoading,
-    loading: computed(() => loadingCounter.value !== 0),
+    loading: computed(() => {
+      return loadingCounter.value > 0
+    }),
   }
 }
 

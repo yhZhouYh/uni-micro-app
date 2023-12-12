@@ -10,7 +10,9 @@ import { useLoginStore, useUserStore } from '~/store'
 import { getSceneParams } from '~/utils/common/url'
 import Storage from '~/utils/common/storage'
 
-import { updateMobile, userCurrent, userLogin } from '~/api/config/login'// 登录接口
+import { updateMobile, userCurrent, userLogin } from '~/api/config/login'
+
+// 登录接口
 import { getMembersCurrent } from '~/api/config/integral'
 import pinia from '~/store/setup'
 

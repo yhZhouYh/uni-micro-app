@@ -1,7 +1,9 @@
 # vue3 + pinia + unocss + uviewplus
 
 ## 统一使用pnpm来install
+
 nrm 添加https://packages.aliyun.com/5facfb4a2f8cc15c287b481b/npm/npm-registry/
+
 ```
  npm ---------- https://registry.npmjs.org/
   yarn --------- https://registry.yarnpkg.com/
@@ -12,9 +14,10 @@ nrm 添加https://packages.aliyun.com/5facfb4a2f8cc15c287b481b/npm/npm-registry/
 * shuinfo ------ https://packages.aliyun.com/5facfb4a2f8cc15c287b481b/npm/npm-registry/
 ```
 
-
 ## pinia
+
 pinia配置persist,会使用持久化保存（uniStorage）
+
 ```ts
 import { defineStore } from 'pinia'
 
@@ -39,23 +42,29 @@ export const useUserStore = defineStore('user', store, {
 ```
 
 ## unocss
+
 [类名查询](https://unocss.dev/interactive/?s=background)
 默认使用[mdi](https://icones.js.org/collection/mdi)图表
 ![Alt text](image.png)
 
 ## uviewplus
+
 暂时使用这个框架https://uiadmin.net/uview-plus/components/icon.html
 
 ## autoimport
+
 vue相关方法和decloud相关方法都自动按需引入了，不需要import, easycom配置了uviewplus组件，也可直接使用
 
 ## todos
+
 持续添加公共功能...
 
-
 ## 公共项目框架
+
 基于uniapp创建，使用vue3开发
+
 ## 项目目录
+
 ```JSON
 ├─ api                              —— 接口配置中心
 ├─ components
@@ -101,6 +110,7 @@ vue相关方法和decloud相关方法都自动按需引入了，不需要import,
 ```
 
 # 提交规范
+
 ```JSON
 feat：新增功能
 fix：bug 修复
@@ -114,11 +124,13 @@ ci：主要目的是修改项目继续集成流程(例如 Travis，Jenkins，Git
 chore：不属于以上类型的其他类，比如构建流程, 依赖管理构建过程或辅助工具的变动
 revert：回滚某个更早之前的提交
 ```
+
 # 示例
 
 git commit -m 'fix: 修复xxx页面跳转异常'
 
 # 插件
+
 ```JSON
 
 "uni-mini-router": "^0.1.4";//使用此插件，路由跳转可以使用vue的方法，官网为https://ask.dcloud.net.cn/article/40552

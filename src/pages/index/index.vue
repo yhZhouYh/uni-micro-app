@@ -1,11 +1,3 @@
-<!--
- * @Author: zhangxiangxiang
- * @Description:
- * @Date: 2023-08-31 14:14:48
- * @LastEditors: zxx
- * @LastEditTime: 2023-09-04 17:50:32
- * @FilePath: /template-uni-vue3/src/pages/index/index.vue
--->
 <script setup>
 import { getCardThemeList } from '~/api'
 
@@ -13,9 +5,11 @@ const state = reactive({
   title: '首页',
   value: 0,
 })
+
 onLoad(() => {
   requestGetCardThemeList()
 })
+
 const colors = ['#5261b1', '#52b170', '#97b152', '#42d392', '#ff9966']
 const bgColor = ref('')
 const bool = ref(false)
@@ -52,7 +46,7 @@ async function requestGetCardThemeList(page = 1, size = 10) {
 </template>
 
 <style scoped lang="scss">
-.u-fixed{
+.u-fixed {
   color: v-bind(bgColor);
 }
 
@@ -62,7 +56,7 @@ async function requestGetCardThemeList(page = 1, size = 10) {
   margin-top: 200rpx;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50rpx
+  margin-bottom: 50rpx;
 }
 
 .title {

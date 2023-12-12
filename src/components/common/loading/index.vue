@@ -89,33 +89,75 @@ const loadingStore = useLoadingStore()
 }
 
 @keyframes spin-a {
-  0%   { transform: rotate(90deg); }
-  0%  { transform: rotate(90deg); }
-  50%  { transform: rotate(180deg); }
-  75%  { transform: rotate(270deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(90deg);
+  }
+  0% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes spin-b {
-  0%   { transform: rotate(90deg); }
-  25%  { transform: rotate(90deg); }
-  25%  { transform: rotate(180deg); }
-  75%  { transform: rotate(270deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(90deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes spin-c {
-  0%   { transform: rotate(90deg); }
-  25%  { transform: rotate(90deg); }
-  50%  { transform: rotate(180deg); }
-  50%  { transform: rotate(270deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(90deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 @keyframes spin-d {
-  0%   { transform: rotate(90deg); }
-  25%  { transform: rotate(90deg); }
-  50%  { transform: rotate(180deg); }
-  75%  { transform: rotate(270deg); }
-  75% { transform: rotate(360deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(90deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .loading > span {

@@ -10,6 +10,7 @@
 import { useLoginStore } from '~/store/login'
 
 const { info } = useLoginStore()
+
 onLaunch(() => {
   const accountInfo = uni.getAccountInfoSync()
   info.APP_ID = accountInfo.miniProgram.appId

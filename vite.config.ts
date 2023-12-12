@@ -37,7 +37,13 @@ export default defineConfig(() => {
         imports: [
           'vue',
           'uni-app',
+          'pinia',
+          {
+            from: 'uni-mini-router',
+            imports: ['createRouter', 'useRouter', 'useRoute'],
+          },
         ],
+
       }),
       uni(),
       Inspect(),
